@@ -8,7 +8,10 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ ok: false, error: "missing fields" }, { status: 400 });
     }
 
-    const webhookUrl = process.env.GOOGLE_SHEETS_WEBHOOK_URL;
+    // Fallback to your deployed Google Apps Script URL if Vercel environment variables are not set
+    const webhookUrl =
+      process.env.GOOGLE_SHEETS_WEBHOOK_URL ||
+      "https://script.google.com/macros/s/AKfycbyr4QWBDx-8jMZrBVf8QaQM1sVu5JpcA9fO-nyCPUvs15enw63NuN2hqGqzcrZjV4cK/exec";
 
     // Check if the URL is configured and is not the placeholder template
     if (
