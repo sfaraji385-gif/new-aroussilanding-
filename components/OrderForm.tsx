@@ -49,6 +49,7 @@ export default function OrderForm() {
       if (typeof window !== "undefined") {
         if (window.fbq) {
           window.fbq("track", "Lead");
+          window.fbq("track", "Purchase", { value: 249, currency: "MAD" });
         }
         if (window.ttq && window.ttq.track) {
           window.ttq.track("SubmitForm");

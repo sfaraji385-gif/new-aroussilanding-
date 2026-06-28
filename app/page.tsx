@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import OrderForm from "@/components/OrderForm";
 import FloatingBuyButton from "@/components/FloatingBuyButton";
+import BuyNowButton from "@/components/BuyNowButton";
 
 export default function Home() {
   const productJsonLd = {
@@ -59,12 +60,7 @@ export default function Home() {
 
         {/* Primary Buy Now Button container */}
         <div className="w-full bg-[#f7efe2] py-6 px-4 flex justify-center border-t border-b border-brand/5">
-          <a
-            href="#order"
-            className="w-full max-w-md bg-[#e11d2a] hover:bg-[#c91823] text-white text-2xl font-extrabold py-5 px-8 rounded-2xl shadow-xl transition-all duration-200 animate-gentle-pulse text-center cursor-pointer block"
-          >
-            اشتري الآن
-          </a>
+          <BuyNowButton />
         </div>
 
         {/* HERO image */}

@@ -53,6 +53,9 @@ export default function FloatingBuyButton() {
     <div className="fixed bottom-4 left-0 right-0 z-50 flex justify-center px-6 pointer-events-none">
       <button
         onClick={() => {
+          if (typeof window !== "undefined" && window.fbq) {
+            window.fbq("track", "InitiateCheckout");
+          }
           document.getElementById("order")?.scrollIntoView({ behavior: "smooth" });
         }}
         className={`w-full max-w-md bg-[#e11d2a] hover:bg-[#c91823] text-white text-xl font-bold py-4 px-6 rounded-xl shadow-2xl transition-all duration-300 transform animate-gentle-pulse cursor-pointer pointer-events-auto ${
